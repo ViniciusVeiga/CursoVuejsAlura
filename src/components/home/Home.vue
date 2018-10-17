@@ -8,6 +8,7 @@
       <li class="lista-fotos-item" v-for="item of filtrar" :key="item.id" >
         <painel :titulo="item.titulo">
           <imagem :url="item.url" :titulo="item.titulo"></imagem>
+          <meu-button tipo="button" rotulo="Remover" @button-ative="remove()"></meu-button>
         </painel>
       </li>
     </ul>
@@ -17,13 +18,15 @@
 
 <script>
 import Painel from '../shared/painel/Painel.vue';
-import Imagem from '../shared/imagem/imagem.vue';
+import Imagem from '../shared/imagem/Imagem.vue';
+import Button from '../shared/button/Button.vue'
 
 export default {
 
   components: {
     'painel': Painel,
-    'imagem': Imagem
+    'imagem': Imagem,
+    'meu-button': Button
   },
 
   computed: {
@@ -38,11 +41,17 @@ export default {
     }
   },
 
-  data () {
+  data() {
     return {
       titulo: 'Alura',
       imagens: [],
       filtro: ''
+    }
+  },
+
+  methods: {
+    remove() {
+      alert('y89dausad')
     }
   },
 
