@@ -8,7 +8,7 @@
       <li class="lista-fotos-item" v-for="item of filtrar" :key="item.id" >
         <painel :titulo="item.titulo">
           <imagem :url="item.url" :titulo="item.titulo"></imagem>
-          <meu-button tipo="button" rotulo="Remover" @button-ative="remove()"></meu-button>
+          <meu-button tipo="button" rotulo="Remover" @button-ative="remove()" :confirmar="true" estilo="alert"></meu-button>
         </painel>
       </li>
     </ul>
@@ -51,7 +51,7 @@ export default {
 
   methods: {
     remove() {
-      alert('y89dausad')
+      alert('Removeu')
     }
   },
 
